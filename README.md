@@ -1,4 +1,4 @@
-# personregister-testmiljo
+# Personregister i testmiljön
 
 Ett enkelt system för att hantera testdata på ett GDPR-kompatibelt sätt.
 
