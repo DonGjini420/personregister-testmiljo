@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import app
 
 from app import init_database, display_users, anonymize_data, clear_test_data
 import os
