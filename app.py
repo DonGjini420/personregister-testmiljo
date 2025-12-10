@@ -2,7 +2,7 @@ import sqlite3
 import os
 
 def init_database():
-    db_path = os.getenv('DATABASE_PATH', '/data/test_users.db')
+    db_path = os.getenv('DATABASE_PATH', 'test_users.db')
     conn = sqlite3.connect(db_path)
     cursor = conn.cursor()
 
