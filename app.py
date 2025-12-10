@@ -1,5 +1,6 @@
 import sqlite3
 import os
+db_path = os.getenv('DATABASE_PATH', 'test_users.db')
 
 
 def init_database():
