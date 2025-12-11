@@ -1,7 +1,13 @@
+#Hanterar själva databasen.
+#Skapar en SQLite‑databas med en tabell för användare (users).
+#Lägger in testanvändare om tabellen är tom.
+#Visar alla användare.
+#Har funktioner för att rensa data (GDPR) och anonymisera namn och e‑post.
+
 import sqlite3
 import os
-db_path = os.getenv('DATABASE_PATH', 'test_users.db')
 
+db_path = os.getenv('DATABASE_PATH', 'test_users.db')
 
 def init_database():
     db_path = os.getenv('DATABASE_PATH', 'test_users.db')
@@ -32,7 +38,6 @@ def init_database():
     conn.commit()
     conn.close()
 
-
 def display_users():
     db_path = os.getenv('DATABASE_PATH', '/data/test_users.db')
     conn = sqlite3.connect(db_path)
@@ -47,7 +52,6 @@ def display_users():
 
     conn.close()
 
-
 def clear_test_data():
     db_path = os.getenv('DATABASE_PATH', '/data/test_users.db')
     conn = sqlite3.connect(db_path)
@@ -57,7 +61,6 @@ def clear_test_data():
     conn.commit()
     conn.close()
     print("All test data has been cleared (GDPR compliant)")
-
 
 def anonymize_data():
     db_path = os.getenv('DATABASE_PATH', '/data/test_users.db')
@@ -70,7 +73,6 @@ def anonymize_data():
     conn.close()
     print("All user names and emails have been anonymized (GDPR compliant)")
 
-
 if __name__ == "__main__":
     init_database()
     display_users()
@@ -81,6 +83,8 @@ if __name__ == "__main__":
             pass
     except KeyboardInterrupt:
         print("\nShutting down...")
+
+
 
 
 

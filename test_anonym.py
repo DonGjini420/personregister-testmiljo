@@ -1,11 +1,13 @@
-#!/usr/bin/env python3
-import app
+#Testar att anonymiseringsfunktionen fungerar korrekt.
+#Kör funktioner från app.py och kontrollerar att användardata blir anonymiserad.
+#Använder troligen pytest för att automatisera testningen.
 
+
+#!/usr/bin/env python3
+
+import app
 from app import init_database, display_users, anonymize_data, clear_test_data
 import os
-
-# Sätt miljövariabeln för databasen (samma som app.py)
-#
 
 def main():
     print("=== Initializing database ===")
@@ -25,3 +27,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+

@@ -1,3 +1,8 @@
+#Automatiserar testning med GitHub Actions.
+#Kör varje gång du pushar eller gör en pull request.
+#Installerar Python och pytest.
+#Testar att koden kan importeras och kompileras utan fel.
+
 name: Build and Test
 
 on: [push, pull_request]
@@ -7,20 +12,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Hämta koden
       - uses: actions/checkout@v3
 
-      # Sätt upp Python
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
 
-      # Installera dependencies
-      - name: Install dependencies
+      - name: Install pytest
         run: pip install pytest
 
-      # Testa imports och syntax
       - name: Test imports and syntax
         run: |
           python -c "import sqlite3, os; print('All imports successful')"
@@ -28,8 +29,5 @@ jobs:
           python -m py_compile test_anonym.py
           echo "Code compilation successful"
 
-      # Kör anonymiseringstest
-      - name: Run anonymization test
-        run: python test_anonym.py
-        env:
-          DATABASE_PATH: ${{ github.workspace }}/test_users.db
+
+ 

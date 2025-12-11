@@ -1,3 +1,7 @@
+#Skyddar projektet från att oönskade filer hamnar i Git.
+#Ignorerar cachefiler, databaser, miljöfiler och systemfiler.
+#Exempel: __pycache__/, *.db, .env, .DS_Store.
+
 __pycache__/
 
 *.pyc
@@ -9,3 +13,4 @@ __pycache__/
 .DS_Store
 
 .env
+
